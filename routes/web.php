@@ -37,6 +37,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
 });
 
+Route::post('admin/login',[AdminController::class,'login'])->name('admin.login');
+
 ////////Route For Vendor\\\\\\\\\\
 Route::middleware(['auth','role:vendor'])->group(function(){
     Route::get('vendor/dashboard',[VendorController::class,'index'])->name('vendor.dashboard');
