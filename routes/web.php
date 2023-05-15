@@ -35,9 +35,11 @@ Route::middleware('auth')->group(function () {
 //////////Route For Admin\\\\\\\\\
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::post('admin/logout',[AdminController::class,'logout'])->name('admin.logout');
+    Route::get('admin/profile',[AdminController::class,'profile'])->name('admin.profile');
 });
 
-Route::post('admin/login',[AdminController::class,'login'])->name('admin.login');
+Route::get('admin/login',[AdminController::class,'login'])->name('admin.login');
 
 ////////Route For Vendor\\\\\\\\\\
 Route::middleware(['auth','role:vendor'])->group(function(){
