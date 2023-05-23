@@ -1,5 +1,5 @@
-@extends('admin.master')
-@section('admin')
+@extends('vendor.master')
+@section('vendor')
 
 <div class="page-content">
 <!--breadcrumb-->
@@ -35,11 +35,11 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex flex-column align-items-center text-center">
-                    <img src="{{ !empty($adminInfo->profile_pic) ? asset('uploads/admin/'.$adminInfo->profile_pic) : asset('uploads/admin/admin.jpg') }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+                    <img src="{{ !empty($vendorInfo->profile_pic) ? asset('uploads/vendor/'.$vendorInfo->profile_pic) : asset('uploads/vendor/vendor.jpg') }}" alt="vendor" class="rounded-circle p-1 bg-primary" width="110">
                     <div class="mt-3">
-                        <h4>{{$adminInfo->userName}}</h4>
-                        <p class="text-secondary mb-1">{{$adminInfo->email}}</p>
-                        <p class="text-muted font-size-sm">{{$adminInfo->address}}</p>
+                        <h4>{{$vendorInfo->userName}}</h4>
+                        <p class="text-secondary mb-1">{{$vendorInfo->email}}</p>
+                        <p class="text-muted font-size-sm">{{$vendorInfo->address}}</p>
 
                     </div>
                 </div>
@@ -72,14 +72,14 @@
     <div class="col-lg-8">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('admin.update.profile')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('vendor.update.profile')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row mb-3">
                         <div class="col-sm-3">
                             <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input name="name" type="text" class="form-control" value="{{ $adminInfo->name}}" />
+                            <input name="name" type="text" class="form-control" value="{{ $vendorInfo->name}}" />
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -87,7 +87,7 @@
                             <h6 class="mb-0">User Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input name="userName" type="text" class="form-control" value="{{ $adminInfo->userName}}" />
+                            <input name="userName" type="text" class="form-control" value="{{ $vendorInfo->userName}}" />
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -95,7 +95,7 @@
                             <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input name="email" type="text" class="form-control" value="{{ $adminInfo->email}}" />
+                            <input name="email" type="text" class="form-control" value="{{ $vendorInfo->email}}" />
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -103,7 +103,7 @@
                             <h6 class="mb-0">Phone</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input name="phone" type="text" class="form-control" value="{{ $adminInfo->phone}}" />
+                            <input name="phone" type="text" class="form-control" value="{{ $vendorInfo->phone}}" />
                         </div>
                     </div>
 
@@ -112,7 +112,7 @@
                             <h6 class="mb-0">Address</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input name="address" type="text" class="form-control" value="{{ $adminInfo->address}}" />
+                            <input name="address" type="text" class="form-control" value="{{ $vendorInfo->address}}" />
                         </div>
                     </div>
                     <div class="row mb-3">

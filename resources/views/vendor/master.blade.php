@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{asset('backend')}}/assets/css/header-colors.css" />
-	<title>Rukada - Responsive Bootstrap 5 Admin Template</title>
+	<title>Rukada - Responsive Bootstrap 5 vendor Template</title>
 
 
 </head>
@@ -34,14 +34,14 @@
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		@include('admin.mainpart.sidebar')
+		@include('vendor.mainpart.sidebar')
 		<!--end sidebar wrapper -->
 		<!--start header -->
-		@include('admin.mainpart.header')
+		@include('vendor.mainpart.header')
 		<!--end header -->
 		<!--start page wrapper -->
 		<div class="page-wrapper">
-			@yield('admin')
+			@yield('vendor')
 		</div>
 		<!--end page wrapper -->
 		<!--start overlay-->
@@ -50,11 +50,11 @@
 		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
 
-        @include('admin.mainpart.footer')
+        @include('vendor.mainpart.footer')
 	</div>
 	<!--end wrapper-->
 	<!--start switcher-->
-	@include('admin.mainpart.switcher')
+	@include('vendor.mainpart.switcher')
 	<!--end switcher-->
 	<!-- Bootstrap JS -->
 	<script src="{{asset('backend')}}/assets/js/bootstrap.bundle.min.js"></script>

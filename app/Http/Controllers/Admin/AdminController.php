@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use app\Models\User;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -48,6 +49,28 @@ class AdminController extends Controller
         }
         $adminData->update();
         return back();
+    }
+    function changePassword(){
+        return view('admin.changepassword');
+    }
+    function updatePassword( Request $request){
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+
+        ]);
+        //find user
+        $find = User::find(Auth::user()->id);
+        //password match
+        if(!Hash::check($request->old_password, $find->password)){
+
+          return back()->with('error','old password does not Match');
+        };
+        //update password
+        $find->password = Hash::make($request->new_password);
+        $find->update();
+        return back()->with('successStatus',"Password Changed");
+
     }
 
 }
