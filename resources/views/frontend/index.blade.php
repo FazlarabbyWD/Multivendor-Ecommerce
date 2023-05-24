@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
-@section('content')
-    <main class="main">
+@section('frontendcontent')
+
         @include('frontend.index.slider')
         <!--End hero slider-->
         @include('frontend.index.categories')
@@ -203,5 +203,5 @@
 
         <!--End Vendor List -->
 
-    </main>
+
 @endsection

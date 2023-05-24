@@ -31,7 +31,9 @@
    <!-- End Header  -->
 
    <!--Main Content Start-->
-      @yield('content')
+   <main class="main">
+      @yield('frontendcontent')
+    </main>
    <!--Main Content End-->
 
     <!--Footer Start-->
