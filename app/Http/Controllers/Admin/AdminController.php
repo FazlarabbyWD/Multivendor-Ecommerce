@@ -72,5 +72,9 @@ class AdminController extends Controller
         return back()->with('successStatus',"Password Changed");
 
     }
+    function view(){
+
+        return view('frontend.index');
+    }
 
 }

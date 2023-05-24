@@ -58,6 +58,7 @@ Route::middleware(['auth','role:vendor'])->group(function(){
 
 Route::get('vendor/login',[VendorController::class,'login'])->name('vendor.login');
 
-
+/////// Front End\\\\\\
+Route::get('front/dashboard',[AdminController::class,'view']);
 
 require __DIR__.'/auth.php';
