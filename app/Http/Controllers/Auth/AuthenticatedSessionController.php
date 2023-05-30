@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
             $customUrl='vendor/dashboard';
         }
         else if($request->user()->role==='user'){
-            $customUrl='dashboard';
+            $customUrl='/home';
         }
 
         return redirect()->intended($customUrl);

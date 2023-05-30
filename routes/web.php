@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard',[UserController::class,'index'])->name('user.dashboard');
     Route::post('/dashboard/user/update',[UserController::class,'updateUser'])->name('user.update');
     Route::post('/dashboard/user/logout',[UserController::class,'userLogout'])->name('user.logout');
+    Route::get('/home',[UserController::class,'home'])->name('user.home');
 
 });
 

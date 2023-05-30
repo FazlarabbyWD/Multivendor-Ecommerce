@@ -80,6 +80,8 @@
             </div>
          </div>
         </div>
+
+        <h1>This is Vendor Dashboard</h1>
     </div><!--end row-->
 
 

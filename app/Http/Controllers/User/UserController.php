@@ -10,6 +10,9 @@ use Image;
 use File;
 class UserController extends Controller
 {
+    function home(){
+        return view('frontend.index');
+    }
     function index(){
         $userData = User::find(Auth::User()->id);
 
